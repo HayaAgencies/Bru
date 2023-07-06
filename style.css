@@ -1,0 +1,12 @@
+.main-body{
+    background: blue;
+    width: 50%;
+    height: 300px;
+}
+.main-body a{
+    text-decoration: none;
+    color: white;
+}
+.main-body button{
+    background-color: black;
+}

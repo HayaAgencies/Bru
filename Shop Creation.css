@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.form{
+    width: 300px;
+    padding: 30px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background: rgba(0, 0, 0, 0.4);
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+input{
+    padding: 10px;
+}
