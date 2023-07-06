@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="Order Of One Store.css">
 </head>
 <body>
-    <form method="POST" action="https://script.google.com/macros/s/AKfycbyFygW8Yy_7A6OFCkDO-Heysi2TlYZGJsb8BztfCM5scuBLaDooa1V7c9YwbvCoDnr8eA/exec" id="Order">
+    <form method="POST" action="#" id="submit-form">
         <h1>Fill Order</h1>
         <input type="text" name=" Shop_Name" id="Shop_Name" placeholder="Shop_Name">
         <input type="text" name="Item No 1" id="" placeholder="Item">
@@ -43,6 +43,24 @@
         <input type="text" name="Quantity Of Item No 15" id="" placeholder="Quantity"><br>
         <input type="submit" value="Send">
     </form>
-
+    <script>
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbyFygW8Yy_7A6OFCkDO-Heysi2TlYZGJsb8BztfCM5scuBLaDooa1V7c9YwbvCoDnr8eA/exec",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Form submitted successfully")
+                    window.location.reload()
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
+    </script>
 </body>
 </html>
