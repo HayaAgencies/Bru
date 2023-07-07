@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop Detials</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="Shop Creation.css">
 </head>
 <body>
-    <form action="https://script.google.com/macros/s/AKfycbwUy9Q5n_zo8NgEqDuyIJojh7A851yjZKB_lXmPsdbsEhGztdXltAAJueyAdKkMyg_lOw/exec" id="submit-form" class="form" method="post">
+    <form action="" id="submit-form" class="form" method="post">
         <input type="text" name="Shop_Name" placeholder="Shop Name" id="shopname" required><br><br>
         <input type="text" name="Gstin" placeholder="If The Store Has Gstin" id="Gstin"><br><br>
         <input type="text" name="Mobile_Number" placeholder="Mobile Number" id="mobile no" required><br><br>
@@ -17,6 +18,24 @@
         <input type="text" name="Addrres 3" placeholder="Addrres 3" id="Addrres 3"><br><br>
         <input type="submit" value="Send">
     </form> 
-
+    <script>
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbwUy9Q5n_zo8NgEqDuyIJojh7A851yjZKB_lXmPsdbsEhGztdXltAAJueyAdKkMyg_lOw/exec",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Form submitted successfully")
+                    window.location.reload()
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
+    </script>
 </body>
 </html>
