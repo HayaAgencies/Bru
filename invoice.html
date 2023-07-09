@@ -32,8 +32,10 @@
                 <div class="row">
                     <div class="col-8">
                         <div class="input-group mb-3">
-                            <span class="input-group-text" >Customer</span>
-                            <input type="text" class="form-control" placeholder="Owner Name"  name="cust_nm">
+                            <span class="input-group-text" l>Shop Name</span>
+                            <datalist id="custli" class="cust">
+                            </datalist>
+                            <input type="text" class="form-control" placeholder="Shop Name" list="custli"  name="shop_name" autocomplete="off">
                         </div>
             
                         <div class="input-group mb-3">
@@ -49,8 +51,8 @@
                     <div class="col-4">
                       
                         <div class="input-group mb-3">
-                            <span class="input-group-text" >Shop Name</span>
-                            <input type="text" class="form-control" placeholder="shop_name"  name="shop_name">
+                            <span class="input-group-text" >Customer</span>
+                            <input type="text" class="form-control" placeholder="Owner Name"  name="cust_nm">
                         </div>
 
                         <div class="input-group mb-3">
