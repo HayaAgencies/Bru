@@ -93,3 +93,31 @@ function customer()
           $(".cust").append(Options);               //04
         });
 }
+function itemdata(v)
+{
+  var index = $(v).parent().parent().index()
+  var item = document.getElementsByName("item_nm")[index].value;
+  var BRURATE = 180;
+  var boostrs5 = 4.60;
+  var brusac2 = 1.80;
+  var brusac5 = 4.45;
+  var redlabel = 500;
+  if(item == "BRU 180"){
+    document.getElementsByName("rate")[index].value = BRURATE;
+  }
+  else if(item == "BOOST Rs 5"){
+    document.getElementsByName("rate")[index].value = boostrs5;
+  }
+  else if(item == "HORLICKS Rs 5"){
+    document.getElementsByName("rate")[index].value = boostrs5;
+  }
+  else if(item == "BRU Rs 2"){
+    document.getElementsByName("rate")[index].value = brusac2;
+  }
+  else if(item == "BRU Rs 5"){
+    document.getElementsByName("rate")[index].value = brusac5;
+  }
+  else if(item == "RED LABEL"){
+    document.getElementsByName("rate")[index].value = redlabel;
+  }
+}
