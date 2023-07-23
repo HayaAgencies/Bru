@@ -97,6 +97,18 @@ function itemdata(v)
 {
   var index = $(v).parent().parent().index()
   var item = document.getElementsByName("item_nm")[index].value;
+  var RealRs10 = 7.5;
+  var RealRs20 = 12;
+  var RealMilkShake = 24.50;
+  var Bnatural = 84;
+  var Itcmilkshake = 28;
+  var realmango1ltr = 88.77;
+  var realguava1ltr = 92.63;
+  var kannandevanred = 253.50;
+  var tataenvelope = 184.66;
+  var mbsugar = 96;
+  var tatasachet = 1.68;
+  var Mayuri= 795;
   var BRURATE = 180;
   var boostrs5 = 4.60;
   var brusac2 = 1.80;
@@ -119,5 +131,50 @@ function itemdata(v)
   }
   else if(item == "RED LABEL"){
     document.getElementsByName("rate")[index].value = redlabel;
+  }
+  else if(item == "Real Rs 10")
+  {
+    document.getElementsByName("rate")[index].value =  RealRs10;
+  }
+  else if(item == "Real Rs 20")
+  {
+    document.getElementsByName("rate")[index].value =  RealRs20;
+  }
+  else if(item == "Real Milkshake choclate" | item == "Real Milkshake Vanila" | item == "Real Milkshake strawberry" | item == "Real Milkshake mango"){
+    document.getElementsByName("rate")[index].value = RealMilkShake;
+  }
+  else if(item == "B natural 1ltr Cranberry" | item == "B natural 1ltr Mango" | item == "B natural 1ltr Guava" | item == "B natural 1ltr apple"){
+    document.getElementsByName("rate")[index].value = Bnatural;
+  }
+  else if(item == "Itc shake choclate" | item == "Itc shake vanila" | item == "Itc shake strawberry vanila" | item == "Itc shake butterscotch"){
+    document.getElementsByName("rate")[index].value = Itcmilkshake;
+  }
+  else if(item == "Kannan devan red")
+  {
+    document.getElementsByName("rate")[index].value =  kannandevanred;
+  }
+  else if(item == "Tetley Envelope")
+  {
+    document.getElementsByName("rate")[index].value =  tataenvelope;
+  }
+  else if(item == "Mb sugar")
+  {
+    document.getElementsByName("rate")[index].value =  mbsugar;
+  }
+  else if(item == "Tata sachet")
+  {
+    document.getElementsByName("rate")[index].value =  tatasachet;
+  }
+  else if(item == "Real 1ltr mango")
+  {
+    document.getElementsByName("rate")[index].value =  realmango1ltr;
+  }
+  else if(item == "Real 1ltr Guava")
+  {
+    document.getElementsByName("rate")[index].value =  realguava1ltr;
+  }
+  else if(item == "Mayuri 5kg")
+  {
+    document.getElementsByName("rate")[index].value =  Mayuri;
   }
 }
