@@ -96,6 +96,7 @@ function customer()
 function itemdata(v)
 {
   var index = $(v).parent().parent().index()
+  
   var item = document.getElementsByName("item_nm")[index].value;
   var RealRs10 = 7.5;
   var RealRs20 = 12;
