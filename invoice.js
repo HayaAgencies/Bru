@@ -190,7 +190,6 @@ function getrate(v)
       {
         document.getElementsByName("rate")[index].value = data;
         Calc(v)
-        alert(data)
       }      
     })
 }
