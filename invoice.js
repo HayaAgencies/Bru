@@ -1,3 +1,4 @@
+var Appsscript = "https://script.google.com/macros/s/AKfycbwF6ckQ1Q-coiP45ZCFgzY_Hw-A4bLTv_Td42QyZ5vqTn5W8C1ZamxwbeA9HJsqOR56VQ/";
 
 function GetPrint()
 {
@@ -45,7 +46,6 @@ function Calc(v)
 
 function GetTotal()
 {
-    /*Footer Calculation*/   
 
     var sum=0;
     var amts =  document.getElementsByName("amt");
@@ -62,6 +62,8 @@ function GetTotal()
  
 $(document).ready(function () {
     FillDataList();
+    FormValidation();
+    customer();
 });
 
 function FillDataList()
@@ -76,10 +78,6 @@ function FillDataList()
           $(".item_nm").append(Options);               //04
         });
 }
-
-$(document).ready(function () {
-    customer();
-});
 
 function customer()
 {
@@ -181,15 +179,38 @@ function itemdata(v)
 }
 function getrate(v)
 {
-    var index = $(v).parent().parent().index();
-    
-    var no = $(v).val();
-    $.getJSON("https://script.google.com/macros/s/AKfycbwF6ckQ1Q-coiP45ZCFgzY_Hw-A4bLTv_Td42QyZ5vqTn5W8C1ZamxwbeA9HJsqOR56VQ/exec?page=search&no="+no,
-    function(data){
-      if(data > 0)
-      {
-        document.getElementsByName("rate")[index].value = data;
-        Calc(v)
-      }      
-    })
+  var index = $(v).parent().parent().index();
+  
+  var no = $(v).val();
+  $.getJSON(Appsscript+"exec?page=search&no="+no,
+  function(data){
+    if(data > 0)
+    {
+      document.getElementsByName("rate")[index].value = data;
+      Calc(v)
+    }      
+  })
+}
+function FormValidation()
+{
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+    'use strict'
+  
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation')
+  
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+      .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+  
+          form.classList.add('was-validated')
+        }, false)
+      })
+  })()
 }

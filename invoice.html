@@ -21,7 +21,8 @@
     
 
     <div class="container ">
-       <form action="https://script.google.com/macros/s/AKfycbwQGC4vFnIop8p-Ozw93YbSgIhsVQcI0B-uCmf3E4UHoDLKLlBh_zeou-InFn-jfvS6oQ/exec" method="post">
+       <form action="https://script.google.com/macros/s/AKfycbzj7HAnEGQbixdBLvHRtpmUF6VzKnq0dSLVXzpc6YYKi7l1d1K4L1LaFLEBwodO3tiXQw/exec" method="post"
+       class="needs-validation" novalidate>
         <div class="card">
             <div class="card-header text-center">
               <h4>INVOICE</h4>
@@ -34,7 +35,7 @@
                             <span class="input-group-text" l>Shop Name</span>
                             <datalist id="custli" class="cust">
                             </datalist>
-                            <input type="text" class="form-control" placeholder="Shop Name" list="custli"  name="shop_name" autocomplete="off">
+                            <input type="text" class="form-control" placeholder="Shop Name" list="custli" required minlength="4"  name="shop_name" autocomplete="off">
                         </div>
             
 
@@ -72,7 +73,7 @@
                       <tr id="TRow" class="d-none">
                         <th scope="row">1</th>
                         <td>
-                          <input class="form-control" name="item_nm" id="item" list="mylist" autocomplete="off" onchange="itemdata(this)">
+                          <input class="form-control" name="item_nm" id="item" list="mylist" autocomplete="off" onchange="getrate(this)">
                           <datalist id="mylist" class="item_nm">
                          </datalist>
                         </td>
