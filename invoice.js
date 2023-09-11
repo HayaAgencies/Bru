@@ -1,4 +1,5 @@
 var Appsscript = "https://script.google.com/macros/s/AKfycbwF6ckQ1Q-coiP45ZCFgzY_Hw-A4bLTv_Td42QyZ5vqTn5W8C1ZamxwbeA9HJsqOR56VQ/";
+var ap="https://script.google.com/macros/s/AKfycbwmFlYBrHsbaR2I4R-EIsKvhi0aTLhjAHPMwg5unk9CroeOiCGV1xEBn2LX_GrH-ucK/exec"
 
 function GetPrint()
 {
@@ -36,10 +37,10 @@ function Calc(v)
     var index = $(v).parent().parent().index();
     
     var qty = document.getElementsByName("qty")[index].value;
-    var rate = document.getElementsByName("rate")[index].value;
+    var rate = document.getElementsByName("Mrp")[index].value;
 
     var amt = qty * rate;
-    document.getElementsByName("amt")[index].value = amt;
+    document.getElementsByName("Amt")[index].value = amt;
 
     GetTotal();
 }
@@ -48,7 +49,7 @@ function GetTotal()
 {
 
     var sum=0;
-    var amts =  document.getElementsByName("amt");
+    var amts =  document.getElementsByName("Amt");
 
     for (let index = 0; index < amts.length; index++)
     {
@@ -64,11 +65,12 @@ $(document).ready(function () {
     FillDataList();
     FormValidation();
     customer();
+    Inv()
 });
 
 function FillDataList()
 {
-        $.getJSON("https://script.google.com/macros/s/AKfycbznmBRZdKIKDjKYsTNN63Clu9KsIkVqM0TEXmOtog7WIpRkL2fIuK9cYhW3d7CCL1qYgw/exec?page=dropdown", 
+        $.getJSON(ap+"?page=DropDown", 
         function (data) {                              //01
           var Options="";                              
           $.each(data, function(key, value)            //02
@@ -182,11 +184,12 @@ function getrate(v)
   var index = $(v).parent().parent().index();
   
   var no = $(v).val();
-  $.getJSON(Appsscript+"exec?page=search&no="+no,
+  console.log(no)
+  $.getJSON(ap+"?page=Search&item="+no,
   function(data){
     if(data > 0)
     {
-      document.getElementsByName("rate")[index].value = data;
+      document.getElementsByName("Mrp")[index].value = data;
       Calc(v)
     }      
   })
@@ -213,4 +216,11 @@ function FormValidation()
         }, false)
       })
   })()
+}
+function Inv()
+{
+  $.getJSON(ap+"?page=InvNoGenerate",
+  function(data){
+    $("#Inv").val(data)
+  })
 }
