@@ -57,7 +57,7 @@ function GetTotal()
         sum = +(sum) +  +(amt) ; 
     }
 
-    document.getElementById("FTotal").value = sum;
+    document.getElementById("TotalAmt").value = sum;
 
 }
  
