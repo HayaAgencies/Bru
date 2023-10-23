@@ -4,7 +4,22 @@ var ap="https://script.google.com/macros/s/AKfycbwmFlYBrHsbaR2I4R-EIsKvhi0aTLhjA
 function GetPrint()
 {
     /*For Print*/
+    let dt = document.getElementById("Date").value
+    let nm = document.getElementById("Party").value
+    console.log(nm)
+    document.getElementById("shopnm").innerText = nm
+    document.getElementById("Dt").innerText  = dt
+    $(".NoPrint").hide()
+    $(".btn").hide()
+    $(".ToPrint").show()
     window.print();
+    $(".ToPrint").hide()
+    $(".NoPrint").show()
+    $(".btn").show()
+}
+
+function ch(){
+  
 }
 
 function BtnAdd()
