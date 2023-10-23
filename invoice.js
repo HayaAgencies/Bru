@@ -13,13 +13,15 @@ function GetPrint()
     $(".btn").hide()
     $(".ToPrint").show()
     window.print();
-    $(".ToPrint").hide()
-    $(".NoPrint").show()
-    $(".btn").show()
+    setTimeout(ch, 3000)
 }
 
 function ch(){
   
+  $(".ToPrint").hide()
+  $(".NoPrint").show()
+  $(".btn").show()
+
 }
 
 function BtnAdd()
