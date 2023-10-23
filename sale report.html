@@ -1,36 +1,67 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Haya Agencies</title>
+
     <link rel="stylesheet" href="sale repot.css">
+
 </head>
+
 <body >
     
     <div class="main">
+
         <form action="https://script.google.com/macros/s/AKfycbzu4eYhMz_FY8pyJdFgfc_t4Ujwn8HKsS7nO8TbudW4n07D7cdatI87Rf7hwGgGYo_K/exec" id="form" name="form" method="post">
+
             <h2>Fill  These</h2><br><br>
+
             <input type="date" name="Today_Date" id="Today_Date" placeholder="Today Date" required><br><br>
+
             <input type="text" name="Store_Sale" id="today" placeholder="That Store Sale" required><br><br>
+
             <input type="text" name="Store_Name" id="Total" placeholder="Store Name" required><br><br>
+
             <input type="text" name="Salesman_Name" id="Salesman" placeholder="Salesman Name" required><br><br>
+
             <input type="submit" value="Sent" id="sent">
+
         </form>
+
     </div>
 
-    <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbzu4eYhMz_FY8pyJdFgfc_t4Ujwn8HKsS7nO8TbudW4n07D7cdatI87Rf7hwGgGYo_K/exec'
-        const form = document.forms['form']
 
-        form.addEventListener('submit', e => {
-        e.preventDefault()
-        fetch(scriptURL, { method: 'POST', body: new FormData(form)})       
-        .then(response => alert("Thank you! your form is submitted successfully." ))
-        .then(() => {  window.location.reload(); })
-        .catch(error => console.error('Error!', error.message))
+<script>
+
+const scriptURL = 'https://script.google.com/macros/s/AKfycbzu4eYhMz_FY8pyJdFgfc_t4Ujwn8HKsS7nO8TbudW4n07D7cdatI87Rf7hwGgGYo_K/exec'
+
+const form = document.forms['form']
+
+
+form.addEventListener('submit', e => {
+
+    e.preventDefault()
+
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})       
+
+    .then(response => alert("Thank you! your form is submitted successfully." ))
+
+    .then(() => {  window.location.reload(); })
+
+    .catch(error => console.error('Error!', error.message))
+
 })
-    </script>
+
+</script>
+
 </body>
+
 </html>
