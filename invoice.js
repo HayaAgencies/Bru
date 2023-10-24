@@ -2,6 +2,8 @@ var Appsscript = "https://script.google.com/macros/s/AKfycbwF6ckQ1Q-coiP45ZCFgzY
 
 var ap="https://script.google.com/macros/s/AKfycbwmFlYBrHsbaR2I4R-EIsKvhi0aTLhjAHPMwg5unk9CroeOiCGV1xEBn2LX_GrH-ucK/exec"
 
+var tttindex = 1;
+
 function GetPrint()
 {
 
@@ -50,6 +52,10 @@ function BtnAdd()
 
   $(v).find("th").first().html($('#TBody tr').length - 1);
 
+  tttindex ++
+
+  console.log(tttindex)
+
 }
 
 function BtnDel(v)
@@ -74,6 +80,11 @@ function BtnDel(v)
     }
 
   );
+
+  tttindex --
+
+  console.log(tttindex)
+
 }
 
 function Calc(v)
