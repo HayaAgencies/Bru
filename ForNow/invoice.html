@@ -26,7 +26,7 @@
 
   <!-- For Invoice  -->
 
-    <script src="invoice.js"></script>
+   <script src="invoice.js"></script>
 
 </head>
 
@@ -56,13 +56,13 @@
 
             <div class="input-group mb-3">
 
-              <span class="input-group-text" l>Shop Name</span>
+              <span class="input-group-text" >Shop Name</span>
 
               <datalist id="custli" class="cust">
 
               </datalist>
 
-              <input type="text" class="form-control Shop" placeholder="Shop Name" onchange="ch()" list="custli" required minlength="4" id="Party"  name="Party" autocomplete="off">
+              <input type="text" class="form-control Shop" placeholder="Shop Name" onchange="Get_ADD_PHNO()" list="custli" required minlength="4" id="Party"  name="Party" autocomplete="off">
 
             </div>
 
@@ -168,13 +168,13 @@
 
           <tbody id="TBody">
 
-            <tr id="TRow">
+            <tr id="TRow" class="">
 
               <th scope="row">0</th>
 
               <td>
 
-                <input class="form-control" name="Item" id="item" list="mylist" autocomplete="off" onchange="getrate(this)">
+                <input class="form-control" onclick="ch(this)" name="Item" id="item" list="mylist" autocomplete="off" onchange="getrate(this)">
 
                 <datalist id="mylist" class="item_nm">
 

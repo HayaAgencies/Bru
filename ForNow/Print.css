@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 10px;
+}
+.col-7{
+
+    padding-right: 0;
+}
+.col-4{
+    padding-left: 0;
+}
+.add{
+    font-size: small;
+    margin: 0;
+
+}
+
+.lines{
+    height: 2.5px;
+    width: 100%;
+    margin-top: 4px;
+    background: black;
+}

@@ -1,8 +1,26 @@
 var Appsscript = "https://script.google.com/macros/s/AKfycbwF6ckQ1Q-coiP45ZCFgzY_Hw-A4bLTv_Td42QyZ5vqTn5W8C1ZamxwbeA9HJsqOR56VQ/";
 
+var Address_From_Appsscript = "https://script.google.com/macros/s/AKfycbygBasdHUIeE02uKRgnDhMzw551Sj_k_67MNT1G9JJRu-k7wOTmbTwaP_PJNTputD5f/exec"
+
 var ap="https://script.google.com/macros/s/AKfycbwmFlYBrHsbaR2I4R-EIsKvhi0aTLhjAHPMwg5unk9CroeOiCGV1xEBn2LX_GrH-ucK/exec"
 
 var tttindex = 1;
+
+var Addresss = Boolean()
+
+Addresss = false
+ 
+$(document).ready(function () {
+
+  FillDataList();
+
+  FormValidation();
+
+  customer();
+
+  Inv()
+
+});
 
 function GetPrint()
 {
@@ -15,28 +33,76 @@ function GetPrint()
 
   document.getElementById("shopnm").innerText = nm
 
+  sessionStorage.setItem("Shop", nm)
+
   document.getElementById("Dt").innerText  = dt
 
-  $(".NoPrint").hide()
+  /*$(".NoPrint").hide()
 
   $(".btn").hide()
 
-  $(".ToPrint").show()
+  $(".ToPrint").show()*/
 
-  window.print();
+  ch()
 
-  setTimeout(ch, 3000)
+  if(Addresss){
+    
+    window.location.assign("Print.html")
+  
+  }
+
+  /*setTimeout(ch, 3000)*/
 
 }
 
-function ch(){
+function Get_ADD_PHNO(){
+
+  let party = $("#Party").val()
+
+  $.getJSON(Address_From_Appsscript+"?page=getaddress&party="+party,
   
-  $(".ToPrint").hide()
+  function(data){
 
-  $(".NoPrint").show()
+    var record = data
 
-  $(".btn").show()
+    let ind = 1
 
+    $.each(record, function(key, value){
+
+      $.each(value, function(key1 , value1){
+
+        if(ind == 1){
+
+          sessionStorage.setItem("mob", value1)
+          ind ++
+
+        }
+        else if(ind == 2){
+
+          sessionStorage.setItem("add", value1)
+          ind ++
+
+        }
+
+      })
+
+    })
+
+  })
+
+  Addresss = true
+
+}
+
+function ch(v){
+
+  let indexx = $(v).parent().parent().index() 
+
+  let indd = $('#TBody tr').length
+
+  let item = document.getElementById("item")[indd].value = "hi"
+
+  console.log(item)
 }
 
 function BtnAdd()
@@ -50,11 +116,9 @@ function BtnAdd()
 
   $(v).removeClass("d-none");
 
-  $(v).find("th").first().html($('#TBody tr').length - 1);
+  $(v).find("th").first().html($('#TBody tr').length - 0);
 
   tttindex ++
-
-  console.log(tttindex)
 
 }
 
@@ -82,8 +146,6 @@ function BtnDel(v)
   );
 
   tttindex --
-
-  console.log(tttindex)
 
 }
 
@@ -129,18 +191,6 @@ function GetTotal()
   document.getElementById("TotalAmt").value = sum;
 
 }
- 
-$(document).ready(function () {
-
-  FillDataList();
-
-  FormValidation();
-
-  customer();
-
-  Inv()
-
-});
 
 function FillDataList()
 {
