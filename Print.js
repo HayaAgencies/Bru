@@ -13,6 +13,8 @@ $(document).ready(function(){
 
     Print_Item()
 
+    PR()
+
 })
 
 function HI(){
@@ -72,14 +74,24 @@ function Print_Item(){
 
     document.getElementById("Total_Amt").innerText = "Total Amount : "+amt
 
-    window.print()
-
-    setTimeout(Back_To_Home,3000)
+    
 
 }
 
 function Back_To_Home(){
 
+    window.print()
+
+    setTimeout(Back_To_Home,3000)
+
     window.location.assign("invoice.html")
 
+}
+
+document.getElementById("btnn").onclick = function(){
+    var element  = document.getElementById("container")
+
+    var opt = {
+        margin: 0
+    }
 }

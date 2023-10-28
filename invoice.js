@@ -55,8 +55,6 @@ function GetPrint()
   
   }
 
-  /*setTimeout(ch, 3000)*/
-
 }
 
 function Get_ADD_PHNO(){
