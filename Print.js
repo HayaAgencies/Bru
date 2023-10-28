@@ -74,7 +74,12 @@ function Print_Item(){
 
     window.print()
 
-    window.location.assign("invoice.html")
+    setTimeout(Back_To_Home,3000)
 
+}
+
+function Back_To_Home(){
+
+    window.location.assign("invoice.html")
 
 }
