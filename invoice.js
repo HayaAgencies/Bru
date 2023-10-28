@@ -9,6 +9,10 @@ var tttindex = 1;
 var Addresss = Boolean()
 
 Addresss = false
+
+var Ratee = 0 
+
+var Ind = 0
  
 $(document).ready(function () {
 
@@ -35,15 +39,15 @@ function GetPrint()
 
   sessionStorage.setItem("Shop", nm)
 
-  document.getElementById("Dt").innerText  = dt
+  sessionStorage.setItem("dt",dt)
 
   /*$(".NoPrint").hide()
 
   $(".btn").hide()
 
-  $(".ToPrint").show()*/
+  $(".ToPrint").show()
 
-  ch()
+  ch()*/
 
   if(Addresss){
     
@@ -94,15 +98,36 @@ function Get_ADD_PHNO(){
 
 }
 
-function ch(v){
+function Get_QTY(v){
 
-  let indexx = $(v).parent().parent().index() 
+  let index = $(v).parent().parent().index()
 
-  let indd = $('#TBody tr').length
+  index = index + 1
 
-  let item = document.getElementById("item")[indd].value = "hi"
+  let QTY = $(v).val()
 
-  console.log(item)
+  sessionStorage.setItem("QTY"+index, QTY)
+
+  sessionStorage.setItem("Total_Row",index)
+
+}
+
+function Get_Item(v){
+
+  let index = $(v).parent().parent().index()
+
+  index = index + 1
+
+  let item = $(v).val()
+  
+  sessionStorage.setItem("Item"+index, item)
+
+}
+
+function Get_Rate(){
+
+  sessionStorage.setItem("Rate"+Ind, Ratee)
+
 }
 
 function BtnAdd()
@@ -116,7 +141,7 @@ function BtnAdd()
 
   $(v).removeClass("d-none");
 
-  $(v).find("th").first().html($('#TBody tr').length - 0);
+  $(v).find("th").first().html($('#TBody tr').length - 1);
 
   tttindex ++
 
@@ -240,7 +265,9 @@ function customer()
 function getrate(v)
 {
 
-  var index = $(v).parent().parent().index();  
+  var index = $(v).parent().parent().index();
+  
+  Ind = $(v).parent().parent().index() + 1;
 
   var no = $(v).val();
 
@@ -256,10 +283,15 @@ function getrate(v)
 
       Calc(v)
 
+      Ratee = data
+      
+      Get_Rate()
+
     }      
 
   })
 
+  
 }
 
 function FormValidation()
@@ -312,3 +344,4 @@ function Inv()
 
   })
 }
+

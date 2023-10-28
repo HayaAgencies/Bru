@@ -174,7 +174,7 @@
 
               <td>
 
-                <input class="form-control" onclick="ch(this)" name="Item" id="item" list="mylist" autocomplete="off" onchange="getrate(this)">
+                <input class="form-control" name="Item" id="item" list="mylist" autocomplete="off" onchange="getrate(this);Get_Item(this)">
 
                 <datalist id="mylist" class="item_nm">
 
@@ -182,7 +182,7 @@
 
               </td>
 
-              <td><input type="number" class="form-control text-end" name="qty" onchange="Calc(this);"></td>
+              <td><input type="number" class="form-control text-end" name="qty" onchange="Calc(this);Get_QTY(this);"></td>
 
               <td><input type="text" class="form-control text-end" name="Mrp" autocomplete="off"  onchange="Calc(this);"></td>
 
