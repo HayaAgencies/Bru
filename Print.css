@@ -24,3 +24,10 @@ body{
     margin-top: 4px;
     background: black;
 }
+
+@media print{
+
+    .btn-d * {
+        display: none;
+    }
+}

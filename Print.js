@@ -12,9 +12,6 @@ $(document).ready(function(){
     Set_Date()
 
     Print_Item()
-
-    PR()
-
 })
 
 function HI(){
@@ -25,6 +22,8 @@ function HI(){
     document.getElementById("par-add-1").innerText = address
 
     document.getElementById("par-add-3").innerText = mobile
+
+    document.title = Shop
 }
 
 function Set_Date(){
@@ -74,24 +73,12 @@ function Print_Item(){
 
     document.getElementById("Total_Amt").innerText = "Total Amount : "+amt
 
-    
+    print(".container")
 
 }
 
 function Back_To_Home(){
 
-    window.print()
-
-    setTimeout(Back_To_Home,3000)
-
     window.location.assign("invoice.html")
 
-}
-
-document.getElementById("btnn").onclick = function(){
-    var element  = document.getElementById("container")
-
-    var opt = {
-        margin: 0
-    }
 }

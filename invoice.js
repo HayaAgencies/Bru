@@ -41,6 +41,7 @@ function GetPrint()
 
   sessionStorage.setItem("dt",dt)
 
+
   /*$(".NoPrint").hide()
 
   $(".btn").hide()
